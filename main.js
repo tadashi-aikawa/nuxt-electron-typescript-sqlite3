@@ -21,9 +21,15 @@ if (config.dev) {
 
 // HTTP server
 const http = require('http')
-const server = http.createServer(nuxt.render)
-server.listen()
-const _NUXT_URL_ = `http://localhost:${server.address().port}`
+let _NUXT_URL_
+
+if (config.dev) {
+  const server = http.createServer(nuxt.render)
+  server.listen()
+  _NUXT_URL_ = `http://localhost:${server.address().port}`
+} else {
+  _NUXT_URL_ = `${__dirname}/dist/index.html`
+}
 console.log(`Nuxt working on ${_NUXT_URL_}`)
 
 // Electron
