@@ -4,11 +4,14 @@
   "description": "Nuxt x Electron x TypeScript x sqlite3",
   "author": "tadashi-aikawa",
   "private": true,
+  "main": "main.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=DEV electron main.js",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "package": "nuxt build && electron-builder",
+    "package:test": "nuxt build && electron-builder --dir",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest"
   },
@@ -28,6 +31,7 @@
     "babel-jest": "^24.1.0",
     "cross-env": "^6.0.3",
     "electron": "^7.1.7",
+    "electron-builder": "^22.3.2",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
@@ -36,5 +40,10 @@
     "nuxt-property-decorator": "^2.5.0",
     "prettier": "^1.16.4",
     "vue-jest": "^4.0.0-0"
+  },
+  "build": {
+    "directories": {
+      "output": "build"
+    }
   }
 }

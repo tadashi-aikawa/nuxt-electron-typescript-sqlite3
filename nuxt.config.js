@@ -59,6 +59,12 @@ module.exports = {
      */
     extend(config, ctx) {
       config.externals = { sqlite3: 'commonjs sqlite3' }
+
+      // Fileビルドした場合のアクセス用
+      config.output.publicPath = './_nuxt/';
     }
+  },
+  router: {
+    mode: 'hash'
   }
 }
