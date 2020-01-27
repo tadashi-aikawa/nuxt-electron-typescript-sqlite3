@@ -7,6 +7,8 @@
   "main": "main.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=DEV electron main.js",
+    "pro": "rimraf dist && nuxt build && cross-env NODE_ENV=PRO electron main.js",
+    "package": "rimraf dist && nuxt build && electron-builder",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -39,6 +41,7 @@
     "jest": "^24.1.0",
     "nuxt-property-decorator": "^2.5.0",
     "prettier": "^1.16.4",
+    "rimraf": "^3.0.0",
     "vue-jest": "^4.0.0-0"
   },
   "build": {

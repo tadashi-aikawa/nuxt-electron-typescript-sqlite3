@@ -58,6 +58,7 @@ module.exports = {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
+      config.output.publicPath = './_nuxt/'
       config.externals = { sqlite3: 'commonjs sqlite3' }
 
       // Fileビルドした場合のアクセス用

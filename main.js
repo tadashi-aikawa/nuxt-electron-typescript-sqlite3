@@ -30,7 +30,6 @@ if (config.dev) {
 } else {
   _NUXT_URL_ = `${__dirname}/dist/index.html`
 }
-
 console.log(`Nuxt working on ${_NUXT_URL_}`)
 
 
